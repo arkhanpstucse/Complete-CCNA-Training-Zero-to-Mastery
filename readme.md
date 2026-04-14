@@ -1,1 +1,0 @@
-All assignment for CCNA preparation
