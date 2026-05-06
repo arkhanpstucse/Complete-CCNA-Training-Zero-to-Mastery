@@ -1,0 +1,148 @@
+Core_Router_01
+===================
+!
+interface FastEthernet0/0.10
+ encapsulation dot1Q 10
+ ip address 10.0.0.2 255.0.0.0
+ standby 10 ip 10.0.0.1
+ standby 10 priority 150
+ standby 10 preempt
+!
+interface FastEthernet0/0.20
+ encapsulation dot1Q 20
+ ip address 20.0.0.2 255.0.0.0
+ standby 20 ip 20.0.0.1
+ standby 20 priority 150
+ standby 20 preempt
+ standby preempt
+!
+interface FastEthernet0/0.30
+ encapsulation dot1Q 30
+ ip address 30.0.0.2 255.0.0.0
+ ip helper-address 10.0.0.11
+ standby 30 ip 30.0.0.1
+ standby 30 priority 150
+ standby 30 preempt
+ standby preempt
+!
+
+!
+interface FastEthernet1/0.40
+ encapsulation dot1Q 40
+ ip address 40.0.0.2 255.0.0.0
+ standby 40 ip 40.0.0.1
+ standby 40 priority 120
+ standby 40 preempt
+ standby preempt
+!
+interface FastEthernet1/0.50
+ encapsulation dot1Q 50
+ ip address 50.0.0.2 255.0.0.0
+ standby 50 ip 50.0.0.1
+ standby 50 priority 120
+ standby 50 preempt
+ standby preempt
+!
+interface FastEthernet1/0.60
+ encapsulation dot1Q 60
+ ip address 60.0.0.2 255.0.0.0
+ standby 60 ip 60.0.0.1
+ standby 60 priority 120
+ standby 60 preempt
+ standby preempt
+!
+
+
+Core_Router_02
+==============
+
+!
+interface FastEthernet0/0.40
+ encapsulation dot1Q 40
+ ip address 40.0.0.3 255.0.0.0
+ standby 40 ip 40.0.0.1
+ standby 40 priority 150
+ standby 40 preempt
+ standby preempt
+!
+interface FastEthernet0/0.50
+ encapsulation dot1Q 50
+ ip address 50.0.0.3 255.0.0.0
+ standby 50 ip 50.0.0.1
+ standby 50 priority 150
+ standby 50 preempt
+ standby preempt
+!
+interface FastEthernet0/0.60
+ encapsulation dot1Q 60
+ ip address 60.0.0.3 255.0.0.0
+ standby 60 ip 60.0.0.1
+ standby 60 priority 150
+ standby 60 preempt
+ standby preempt
+!
+
+!
+interface FastEthernet1/0.10
+ encapsulation dot1Q 10
+ ip address 10.0.0.3 255.0.0.0
+ standby 10 ip 10.0.0.1
+ standby 10 priority 120
+ standby 10 preempt
+!
+interface FastEthernet1/0.20
+ encapsulation dot1Q 20
+ ip address 20.0.0.3 255.0.0.0
+ standby 20 ip 20.0.0.1
+ standby 20 priority 120
+ standby 20 preempt
+ standby preempt
+!
+interface FastEthernet1/0.30
+ encapsulation dot1Q 30
+ ip address 30.0.0.3 255.0.0.0
+ standby 30 ip 30.0.0.1
+ standby 30 priority 120
+ standby 30 preempt
+ standby preempt
+!
+interface Serial2/0
+ ip address 35.0.0.1 255.255.255.252
+ clock rate 2000000
+!
+interface Serial3/0
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface FastEthernet4/0
+ ip address 26.0.0.1 255.0.0.0
+!
+interface FastEthernet5/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet6/0
+ ip address 7.0.0.1 255.0.0.0
+!
+interface GigabitEthernet7/0
+ no ip address
+!
+interface GigabitEthernet8/0
+ no ip address
+!
+interface Serial9/0
+ no ip address
+ clock rate 2000000
+!
+router ospf 1
+ log-adjacency-changes
+ network 35.0.0.0 0.0.0.3 area 0
+ network 60.0.0.0 0.255.255.255 area 0
+ network 50.0.0.0 0.255.255.255 area 0
+ network 40.0.0.0 0.255.255.255 area 0
+ network 30.0.0.0 0.255.255.255 area 0
+ network 20.0.0.0 0.255.255.255 area 0
+ network 10.0.0.0 0.255.255.255 area 0
+!
+
