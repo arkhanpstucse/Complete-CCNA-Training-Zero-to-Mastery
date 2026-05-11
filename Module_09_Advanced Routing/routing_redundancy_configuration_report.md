@@ -2,13 +2,7 @@
 
 ## Assignment: Module 9
 
-### Submitted By
-- Name: ____________________
-- ID: ____________________
-- Course: Networking / CCNA
-- Date: ____________________
 
----
 
 # Objective
 The objective of this assignment is to implement and verify routing redundancy in an enterprise network environment using:
