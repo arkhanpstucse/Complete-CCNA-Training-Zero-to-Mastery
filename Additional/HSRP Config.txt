@@ -83,14 +83,14 @@ interface FastEthernet0/0.60
 !
 
 !
-interface FastEthernet1/0.10
+interface FastEthernet0/0.10
  encapsulation dot1Q 10
  ip address 10.0.0.3 255.0.0.0
  standby 10 ip 10.0.0.1
  standby 10 priority 120
  standby 10 preempt
 !
-interface FastEthernet1/0.20
+interface FastEthernet0/0.20
  encapsulation dot1Q 20
  ip address 20.0.0.3 255.0.0.0
  standby 20 ip 20.0.0.1
@@ -98,7 +98,7 @@ interface FastEthernet1/0.20
  standby 20 preempt
  standby preempt
 !
-interface FastEthernet1/0.30
+interface FastEthernet0/0.30
  encapsulation dot1Q 30
  ip address 30.0.0.3 255.0.0.0
  standby 30 ip 30.0.0.1
